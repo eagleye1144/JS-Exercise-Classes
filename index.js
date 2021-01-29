@@ -145,15 +145,17 @@ class Airplane {
      this.catchPhrase = obj.catchPhrase;
    }
    demo(subject){
+     this.subject = subject;
       return `Today we are learning about ${subject}`;
    }
-   grade(obj, subject){
-     this.student = obj.student;
+   grade(subject){
      this.subject = subject;
-    return `${this.student} receives a perfect score on ${this.subject}`;
+     
+    return `${this.name} receives a perfect score on ${this.subject}`;
    }
  }
- 
+
+
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
@@ -182,15 +184,13 @@ class Airplane {
       },)
       return `Loving ${string}`;
    } 
-   PRAssignment(obj, subject){
-    this.student = obj.student
+   PRAssignment(subject){
     this.subject = subject;
-    return `${this.student} has submitted a PR for ${this.subject}`;
+    return `${this.name} has submitted a PR for ${this.subject}`;
    } 
-   sprintChallenge(obj, subject){
-    this.student = obj.student;
+   sprintChallenge(subject,){
     this.subject = subject;
-     return `${student.name} has begun sprint challenge on ${subject}`;
+     return `${this.name} has begun sprint challenge on ${this.subject}`;
    }
  }
 
@@ -213,11 +213,14 @@ class Airplane {
        this.gradClassName = obj.gradClassName;
        this.favInstructor = obj.favInstructor;
      }
-     standUp(){
-
+     standUp(channel){
+      this.channel = channel;
+      return `${this.name} announces to ${this.channel}, @channel standy times!`;
      }
-     debugsCode(){
-       
+     debugsCode(subject, student){
+      this.subject = subject;
+      this.student = student;
+      return `${this.name} debugs ${this.student}'s code on ${this.subject}`;
      }
  }
   /*
