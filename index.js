@@ -148,10 +148,8 @@ class Airplane {
      this.subject = subject;
       return `Today we are learning about ${subject}`;
    }
-   grade(subject){
-     this.subject = subject;
-     
-    return `${this.name} receives a perfect score on ${this.subject}`;
+   grade(student, subject){
+    return `${student.name} receives a perfect score on ${subject}`;
    }
  }
 
@@ -189,8 +187,7 @@ class Airplane {
     return `${this.name} has submitted a PR for ${this.subject}`;
    } 
    sprintChallenge(subject,){
-    this.subject = subject;
-     return `${this.name} has begun sprint challenge on ${this.subject}`;
+     return `${this.name} has begun sprint challenge on ${subject}`;
    }
  }
 
@@ -217,10 +214,8 @@ class Airplane {
       this.channel = channel;
       return `${this.name} announces to ${this.channel}, @channel standy times!`;
      }
-     debugsCode(subject, student){
-      this.subject = subject;
-      this.student = student;
-      return `${this.name} debugs ${this.student}'s code on ${this.subject}`;
+     debugsCode(student, subject){
+      return `${this.name} debugs ${student.name}'s code on ${subject}`;
      }
  }
   /*
