@@ -147,13 +147,13 @@ class Airplane {
    demo(subject){
       return `Today we are learning about ${subject}`;
    }
-   grade(student, subject){
-     this.student = student.student;
+   grade(obj, subject){
+     this.student = obj.student;
      this.subject = subject;
     return `${this.student} receives a perfect score on ${this.subject}`;
    }
-
  }
+ 
   /*
     TASK 5
       - Write a Student class extending Lambdasian.
@@ -169,10 +169,31 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
-     
+ class Student extends Lambdasian{
+  constructor(obj){
+    super(obj);
+    this.previousBackground = obj.previousBackground;
+    this.className = obj.className;
+    this.favSubjects = obj.favSubjects;
+  }
+   listSubjects(){
+      let string = this.favSubjects.reduce(function (accumulator, currentValue) {
+        return accumulator + currentValue;
+      },)
+      return `Loving ${string}`;
+   } 
+   PRAssignment(obj, subject){
+    this.student = obj.student
+    this.subject = subject;
+    return `${this.student} has submitted a PR for ${this.subject}`;
+   } 
+   sprintChallenge(obj, subject){
+    this.student = obj.student;
+    this.subject = subject;
+     return `${student.name} has begun sprint challenge on ${subject}`;
+   }
  }
-  
+
   /*
     TASK 6
       - Write a ProjectManager class extending Instructor.
@@ -186,8 +207,18 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
-     
+ class ProjectManager extends Instructor{
+     constructor(obj){
+       super(obj);
+       this.gradClassName = obj.gradClassName;
+       this.favInstructor = obj.favInstructor;
+     }
+     standUp(){
+
+     }
+     debugsCode(){
+       
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
